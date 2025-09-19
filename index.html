@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,6 +12,7 @@
   <!-- Your styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <main class="page">
     <h1 class="visually-hidden">Carousel Demo</h1>
@@ -104,28 +106,21 @@
   <!-- Init -->
   <script>
     const swiper = new Swiper('.mySwiper', {
-      // Mobile-first
-      slidesPerView: 1.5,
+      slidesPerView: 'auto',       // mobile: use CSS width
       spaceBetween: 16,
       grabCursor: true,
-      // Dots
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      // Arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      // Desktop breakpoints
+
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+
       breakpoints: {
         1024: {
-          slidesPerView: 4,
-          spaceBetween: 20,
+          slidesPerView: 4,        // desktop: 4 columns
+          spaceBetween: 20
         }
       }
     });
   </script>
 </body>
+
 </html>

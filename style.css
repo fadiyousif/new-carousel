@@ -11,7 +11,9 @@
 
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -35,9 +37,12 @@ body {
 .swiper {
   width: 100%;
   padding-bottom: 8px; /* little breathing room above controls */
+  overflow: visible;   /* allow next slide to peek in on mobile */
 }
 
-.swiper-slide {
+/* Mobile: force 1.5 slides visible (show half of the next slide) */
+.mySwiper .swiper-slide {
+  width: calc((100% - var(--gap)) / 1.5);
   height: auto;
 }
 
@@ -102,37 +107,25 @@ body {
   height: 40px;
 }
 
-/* --- Arrows (on the right, below carousel) --- */
+/* Reset Swiper's absolute positioning for buttons
+   so they behave like normal inline buttons in our custom bar */
 .swiper-button-prev,
 .swiper-button-next {
-  position: static !important;  /* remove absolute positioning */
+  position: static;             /* key change from absolute */
   margin: 0;
-  flex: 0 0 auto;
   width: 40px;
   height: 40px;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: #fff;
   box-shadow: var(--shadow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
 }
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  font-size: 16px;
+  font-size: 14px;              /* arrow icon size from Swiper's font */
   font-weight: 700;
   color: #111827;
-  position: static;   /* ensure the icon is centered inside */
-}
-
-.swiper-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
 }
 
 /* Hover/focus states */
@@ -148,8 +141,12 @@ body {
   outline-offset: 2px;
 }
 
-/* Responsive tweaks */
+/* Desktop overrides */
 @media (min-width: 1024px) {
+  .mySwiper .swiper-slide {
+    width: auto; /* let Swiper handle 4 per view */
+  }
+
   .swiper-slide img {
     height: 200px;
   }
