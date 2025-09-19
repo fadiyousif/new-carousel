@@ -1,0 +1,156 @@
+/* Basic layout */
+:root {
+  --container-max: 1200px;
+  --gap: 16px;
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: #fff;
+}
+
+.page {
+  padding: 24px;
+  display: grid;
+  place-items: center;
+}
+
+.carousel {
+  width: 100%;
+  max-width: var(--container-max);
+}
+
+/* Swiper area */
+.swiper {
+  width: 100%;
+  padding-bottom: 8px; /* little breathing room above controls */
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-slide figure {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.swiper-slide figcaption {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: #fafafa;
+}
+
+/* Controls line BELOW the carousel */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* dots left, arrows right */
+  gap: var(--gap);
+  margin-top: 10px;
+}
+
+/* --- Pagination (dots, on the left) --- */
+.swiper-pagination {
+  position: static;            /* detach from absolute defaults */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #d1d5db;
+  opacity: 1;                  /* keep consistent color */
+}
+
+.swiper-pagination-bullet-active {
+  background: #111827;
+}
+
+/* --- Arrows (on the right) --- */
+.swiper-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+}
+
+/* --- Arrows (on the right, below carousel) --- */
+.swiper-button-prev,
+.swiper-button-next {
+  position: static !important;  /* remove absolute positioning */
+  margin: 0;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  position: static;   /* ensure the icon is centered inside */
+}
+
+.swiper-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+}
+
+/* Hover/focus states */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: #f9fafb;
+}
+
+.swiper-button-prev:focus-visible,
+.swiper-button-next:focus-visible,
+.swiper-pagination-bullet:focus-visible {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
+/* Responsive tweaks */
+@media (min-width: 1024px) {
+  .swiper-slide img {
+    height: 200px;
+  }
+}

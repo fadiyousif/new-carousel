@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Swiper Carousel (Dots Left, Arrows Right)</title>
+
+  <!-- Swiper core CSS (CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Your styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <h1 class="visually-hidden">Carousel Demo</h1>
+
+    <!-- Carousel wrapper -->
+    <section class="carousel">
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- 10 slides -->
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide1/800/600" alt="Sample image 1" />
+              <figcaption>Item 1</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide2/800/600" alt="Sample image 2" />
+              <figcaption>Item 2</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide3/800/600" alt="Sample image 3" />
+              <figcaption>Item 3</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide4/800/600" alt="Sample image 4" />
+              <figcaption>Item 4</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide5/800/600" alt="Sample image 5" />
+              <figcaption>Item 5</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide6/800/600" alt="Sample image 6" />
+              <figcaption>Item 6</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide7/800/600" alt="Sample image 7" />
+              <figcaption>Item 7</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide8/800/600" alt="Sample image 8" />
+              <figcaption>Item 8</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide9/800/600" alt="Sample image 9" />
+              <figcaption>Item 9</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="https://picsum.photos/seed/slide10/800/600" alt="Sample image 10" />
+              <figcaption>Item 10</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls BELOW the carousel -->
+      <div class="carousel-controls">
+        <!-- Dots (left side) -->
+        <div class="swiper-pagination" aria-label="Carousel pagination"></div>
+
+        <!-- Arrows (right side) -->
+        <div class="swiper-nav" aria-label="Carousel navigation">
+          <button class="swiper-button-prev" aria-label="Previous slide"></button>
+          <button class="swiper-button-next" aria-label="Next slide"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Swiper JS (CDN) -->
+  <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Init -->
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      // Mobile-first
+      slidesPerView: 1.5,
+      spaceBetween: 16,
+      grabCursor: true,
+      // Dots
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      // Arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      // Desktop breakpoints
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        }
+      }
+    });
+  </script>
+</body>
+</html>
