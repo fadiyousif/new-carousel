@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Swiper Carousel (Dots Left, Arrows Right)</title>
+  <title>Tabbed Swiper Carousel (Dots Left, Arrows Right)</title>
 
   <!-- Swiper core CSS (CDN) -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
@@ -12,89 +11,121 @@
   <!-- Your styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <main class="page">
-    <h1 class="visually-hidden">Carousel Demo</h1>
+    <h1 class="visually-hidden">Tabbed Carousel Demo</h1>
 
-    <!-- Carousel wrapper -->
-    <section class="carousel">
-      <!-- Swiper -->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <!-- 10 slides -->
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide1/800/600" alt="Sample image 1" />
-              <figcaption>Item 1</figcaption>
-            </figure>
+    <!-- Tabs -->
+    <div class="tabs" role="tablist" aria-label="Product categories">
+      <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-oils" id="tab-oils">Oils</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-gummies" id="tab-gummies">Gummies</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-capsules" id="tab-capsules">Capsules</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-topicals" id="tab-topicals">Topicals</button>
+    </div>
+
+    <!-- Panels -->
+    <section class="tab-panel" id="panel-oils" role="tabpanel" aria-labelledby="tab-oils">
+      <div class="carousel">
+        <div class="swiper oilsSwiper">
+          <div class="swiper-wrapper">
+            <!-- 10 slides -->
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil1/800/600" alt="Oil product 1"><figcaption>Oil 1</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil2/800/600" alt="Oil product 2"><figcaption>Oil 2</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil3/800/600" alt="Oil product 3"><figcaption>Oil 3</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil4/800/600" alt="Oil product 4"><figcaption>Oil 4</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil5/800/600" alt="Oil product 5"><figcaption>Oil 5</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil6/800/600" alt="Oil product 6"><figcaption>Oil 6</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil7/800/600" alt="Oil product 7"><figcaption>Oil 7</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil8/800/600" alt="Oil product 8"><figcaption>Oil 8</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil9/800/600" alt="Oil product 9"><figcaption>Oil 9</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/oil10/800/600" alt="Oil product 10"><figcaption>Oil 10</figcaption></figure></div>
           </div>
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide2/800/600" alt="Sample image 2" />
-              <figcaption>Item 2</figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide3/800/600" alt="Sample image 3" />
-              <figcaption>Item 3</figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide4/800/600" alt="Sample image 4" />
-              <figcaption>Item 4</figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide5/800/600" alt="Sample image 5" />
-              <figcaption>Item 5</figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide6/800/600" alt="Sample image 6" />
-              <figcaption>Item 6</figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide7/800/600" alt="Sample image 7" />
-              <figcaption>Item 7</figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide8/800/600" alt="Sample image 8" />
-              <figcaption>Item 8</figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide9/800/600" alt="Sample image 9" />
-              <figcaption>Item 9</figcaption>
-            </figure>
-          </div>
-          <div class="swiper-slide">
-            <figure>
-              <img src="https://picsum.photos/seed/slide10/800/600" alt="Sample image 10" />
-              <figcaption>Item 10</figcaption>
-            </figure>
+        </div>
+        <!-- Controls BELOW -->
+        <div class="carousel-controls">
+          <div class="swiper-pagination oils-pagination" aria-label="Oils pagination"></div>
+          <div class="swiper-nav" aria-label="Oils navigation">
+            <button class="swiper-button-prev oils-prev" aria-label="Previous slide"></button>
+            <button class="swiper-button-next oils-next" aria-label="Next slide"></button>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Controls BELOW the carousel -->
-      <div class="carousel-controls">
-        <!-- Dots (left side) -->
-        <div class="swiper-pagination" aria-label="Carousel pagination"></div>
+    <section class="tab-panel is-hidden" id="panel-gummies" role="tabpanel" aria-labelledby="tab-gummies" hidden>
+      <div class="carousel">
+        <div class="swiper gummiesSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum1/800/600" alt="Gummy product 1"><figcaption>Gummy 1</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum2/800/600" alt="Gummy product 2"><figcaption>Gummy 2</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum3/800/600" alt="Gummy product 3"><figcaption>Gummy 3</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum4/800/600" alt="Gummy product 4"><figcaption>Gummy 4</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum5/800/600" alt="Gummy product 5"><figcaption>Gummy 5</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum6/800/600" alt="Gummy product 6"><figcaption>Gummy 6</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum7/800/600" alt="Gummy product 7"><figcaption>Gummy 7</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum8/800/600" alt="Gummy product 8"><figcaption>Gummy 8</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum9/800/600" alt="Gummy product 9"><figcaption>Gummy 9</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/gum10/800/600" alt="Gummy product 10"><figcaption>Gummy 10</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <div class="swiper-pagination gummies-pagination" aria-label="Gummies pagination"></div>
+          <div class="swiper-nav" aria-label="Gummies navigation">
+            <button class="swiper-button-prev gummies-prev" aria-label="Previous slide"></button>
+            <button class="swiper-button-next gummies-next" aria-label="Next slide"></button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Arrows (right side) -->
-        <div class="swiper-nav" aria-label="Carousel navigation">
-          <button class="swiper-button-prev" aria-label="Previous slide"></button>
-          <button class="swiper-button-next" aria-label="Next slide"></button>
+    <section class="tab-panel is-hidden" id="panel-capsules" role="tabpanel" aria-labelledby="tab-capsules" hidden>
+      <div class="carousel">
+        <div class="swiper capsulesSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap1/800/600" alt="Capsule product 1"><figcaption>Capsule 1</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap2/800/600" alt="Capsule product 2"><figcaption>Capsule 2</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap3/800/600" alt="Capsule product 3"><figcaption>Capsule 3</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap4/800/600" alt="Capsule product 4"><figcaption>Capsule 4</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap5/800/600" alt="Capsule product 5"><figcaption>Capsule 5</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap6/800/600" alt="Capsule product 6"><figcaption>Capsule 6</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap7/800/600" alt="Capsule product 7"><figcaption>Capsule 7</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap8/800/600" alt="Capsule product 8"><figcaption>Capsule 8</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap9/800/600" alt="Capsule product 9"><figcaption>Capsule 9</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/cap10/800/600" alt="Capsule product 10"><figcaption>Capsule 10</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <div class="swiper-pagination capsules-pagination" aria-label="Capsules pagination"></div>
+          <div class="swiper-nav" aria-label="Capsules navigation">
+            <button class="swiper-button-prev capsules-prev" aria-label="Previous slide"></button>
+            <button class="swiper-button-next capsules-next" aria-label="Next slide"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel is-hidden" id="panel-topicals" role="tabpanel" aria-labelledby="tab-topicals" hidden>
+      <div class="carousel">
+        <div class="swiper topicalsSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top1/800/600" alt="Topical product 1"><figcaption>Topical 1</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top2/800/600" alt="Topical product 2"><figcaption>Topical 2</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top3/800/600" alt="Topical product 3"><figcaption>Topical 3</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top4/800/600" alt="Topical product 4"><figcaption>Topical 4</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top5/800/600" alt="Topical product 5"><figcaption>Topical 5</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top6/800/600" alt="Topical product 6"><figcaption>Topical 6</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top7/800/600" alt="Topical product 7"><figcaption>Topical 7</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top8/800/600" alt="Topical product 8"><figcaption>Topical 8</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top9/800/600" alt="Topical product 9"><figcaption>Topical 9</figcaption></figure></div>
+            <div class="swiper-slide"><figure><img src="https://picsum.photos/seed/top10/800/600" alt="Topical product 10"><figcaption>Topical 10</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <div class="swiper-pagination topicals-pagination" aria-label="Topicals pagination"></div>
+          <div class="swiper-nav" aria-label="Topicals navigation">
+            <button class="swiper-button-prev topicals-prev" aria-label="Previous slide"></button>
+            <button class="swiper-button-next topicals-next" aria-label="Next slide"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -103,32 +134,86 @@
   <!-- Swiper JS (CDN) -->
   <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
 
-  <!-- Init -->
+  <!-- Tabs + Swipers init -->
   <script>
-    const swiper = new Swiper('.mySwiper', {
-      // Mobile-first
-      slidesPerView: 1.5,
-      spaceBetween: 16,
-      grabCursor: true,
-      // Dots
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      // Arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      // Desktop breakpoints
-      breakpoints: {
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 20,
+    // Helper to build a swiper with shared settings
+    function makeSwiper(selector, { paginationEl, nextEl, prevEl }) {
+      return new Swiper(selector, {
+        slidesPerView: 1.5,
+        spaceBetween: 16,
+        grabCursor: true,
+        pagination: { el: paginationEl, clickable: true },
+        navigation: { nextEl, prevEl },
+        breakpoints: {
+          1024: { slidesPerView: 4, spaceBetween: 20 }
         }
-      }
+      });
+    }
+
+    // Initialize all carousels
+    const swipers = {
+      oils: makeSwiper('.oilsSwiper', {
+        paginationEl: '.oils-pagination',
+        nextEl: '.oils-next',
+        prevEl: '.oils-prev'
+      }),
+      gummies: makeSwiper('.gummiesSwiper', {
+        paginationEl: '.gummies-pagination',
+        nextEl: '.gummies-next',
+        prevEl: '.gummies-prev'
+      }),
+      capsules: makeSwiper('.capsulesSwiper', {
+        paginationEl: '.capsules-pagination',
+        nextEl: '.capsules-next',
+        prevEl: '.capsules-prev'
+      }),
+      topicals: makeSwiper('.topicalsSwiper', {
+        paginationEl: '.topicals-pagination',
+        nextEl: '.topicals-next',
+        prevEl: '.topicals-prev'
+      })
+    };
+
+    // Tabs behavior
+    const tabButtons = Array.from(document.querySelectorAll('.tab'));
+    const panels = {
+      oils: document.getElementById('panel-oils'),
+      gummies: document.getElementById('panel-gummies'),
+      capsules: document.getElementById('panel-capsules'),
+      topicals: document.getElementById('panel-topicals')
+    };
+
+    function activateTab(name) {
+      // Buttons
+      tabButtons.forEach(btn => {
+        const isActive = btn.id === 'tab-' + name;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.tabIndex = isActive ? 0 : -1;
+      });
+
+      // Panels
+      Object.entries(panels).forEach(([key, el]) => {
+        const show = key === name;
+        el.classList.toggle('is-hidden', !show);
+        el.hidden = !show;
+        if (show && swipers[key]) swipers[key].update(); // ensure layout is correct when shown
+      });
+    }
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => activateTab(btn.id.replace('tab-','')));
+      btn.addEventListener('keydown', (e) => {
+        // Left/Right arrow keyboard navigation
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          const i = tabButtons.indexOf(btn);
+          const dir = e.key === 'ArrowRight' ? 1 : -1;
+          const next = tabButtons[(i + dir + tabButtons.length) % tabButtons.length];
+          next.focus();
+          next.click();
+        }
+      });
     });
   </script>
 </body>
-
 </html>
